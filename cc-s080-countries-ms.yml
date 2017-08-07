@@ -27,7 +27,8 @@ logging:
     
 feign:
     name: S080Back
-    url: http://192.168.11.58:7778      
+    url: http://192.168.11.58:7778
+    #url: http://150.110.186.56:50719     
     
 hystrix:
   command:
