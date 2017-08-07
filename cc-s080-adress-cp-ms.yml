@@ -1,0 +1,47 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+info:
+  component: Adress by cp
+server:
+  port: 7807
+spring:
+  config:
+    name: cc-s080-adress-cp-ms
+  application:
+    name: cc-s080-adress-cp-ms
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+            
+#s080.ribbon.listOfServers: http://192.168.10.147:7778
+
+feign:
+    name: S080Dummy
+    #url: http://150.110.186.56:50719
+    url: http://localhost:7778
+
+logging:
+    level:
+        com:
+            banamex:
+                portal:
+                    microservice:
+                        ccappsaddresssttcolms: DEBUG
+        org:
+            springframework:
+                web: INFO
