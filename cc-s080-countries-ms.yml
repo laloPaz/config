@@ -1,0 +1,38 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+info:
+  component: Microservicio que hace un subllamado para obtener la lista de paises.
+server:
+  port: 7799
+spring:
+  config:
+    name: cc-s080-countries-ms
+  application:
+    name: cc-s080-countries-ms
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+    
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.ccs080countriesms: DEBUG  
+    
+feign:
+    name: S080Back
+    url: http://192.168.11.58:7778      
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
