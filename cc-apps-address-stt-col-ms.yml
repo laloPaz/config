@@ -1,0 +1,35 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+info:
+  component: Microservicio regresa información de la dirección en base al nombre de la colonia y el ID del estado.
+server:
+  port: 7791
+spring:
+  config:
+    name: cc-apps-address-stt-col-ms
+  application:
+    name: cc-apps-address-stt-col-ms
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+    
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.ccappsaddresssttcolms: DEBUG
+   
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+         
