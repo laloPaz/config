@@ -1,0 +1,32 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+info:
+  component: Microservicio de Custumer
+server:
+  port: 7705
+spring:
+  config:
+    name: cc-apps-custumer-ms
+  application:
+    name: cc-apps-custumer-ms
+
+logging:
+  level:
+    com.banamex.portal: DEBUG
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000

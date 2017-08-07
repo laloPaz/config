@@ -1,0 +1,28 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+info:
+  component: Microservicio de Custumer NC
+server:
+  port: 7609
+spring:
+  config:
+    name: cc-custumer-nc-ms
+  application:
+    name: cc-custumer-nc-ms
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
