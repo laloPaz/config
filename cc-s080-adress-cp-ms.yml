@@ -30,10 +30,10 @@ hystrix:
             
 s080.ribbon.listOfServers: http://192.168.10.147:7778
 
-#feign:
+feign:
 #    name: S080Dummy
     #url: http://150.110.186.56:50719
-#    url: http://localhost:7778
+    url: http://localhost:7778
 
 logging:
     level:
