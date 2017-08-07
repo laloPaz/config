@@ -24,12 +24,7 @@ logging:
   level:
     org.springframework.web: INFO
     com.banamex.portal.microservice.ccappsaddresssttcolms: DEBUG
-    
-
-feign:
-  name: S080Dummy
-  url: http://192.168.11.58:7778       
-    
+   
 hystrix:
   command:
     default:
