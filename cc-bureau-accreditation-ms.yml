@@ -1,17 +1,17 @@
 variables:
   eureka:
-    host: localhost
-    #host: service-registry-host
+    #host: localhost
+    host: service-registry-host
     port: 8761
 info:
-  component: S016 Client Microservice
-server:
-  port: 7798
+  component: Bureau Microservice
+#server:
+#  port: 7794
 spring:
   config:
-    name: cc-s016-client-ms
+    name: cc-bureau-accreditation-ms
   application:
-    name: cc-s016-client-ms
+    name: cc-bureau-accreditation-ms
 
 logging:
   level:
@@ -31,8 +31,10 @@ hystrix:
           thread:
             timeoutInMilliseconds: 120000
 
-feign:
-    name: S016Back
-    #url: http://150.110.186.56:50719
-    #url: http://localhost:8762
-    url:  https://www.mobileuat.banamex.com
+#UAT            
+addresses:
+    endPointBureau: https://b72780-vip.nam.nsroot.net:13081
+    endPointCatalogos: 0.0.0.0
+    endPointCi: https://B61646-vip.nam.nsroot.net:46600 
+    endPointCiAdapter: 0.0.0.0
+    endPointDefault: 0.0.0.0            

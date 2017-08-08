@@ -1,0 +1,56 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+info:
+  component: Credit Card Microservicio Crate
+server:
+  port: 7785
+spring:
+  config:
+    name: cc-apps-create-ms
+  application:
+    name: cc-apps-create-ms
+
+logging:
+  level:
+    com.banamex.portal: DEBUG
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+            
+encryption:
+    ivBytes: YNpQKRzrA6DkNxCgQd5YIQ==
+    keySize: 256
+    passWord: '^The_chance_wont_come_again_And_dont_speak_too_soon_For_the_wheel_is_still_in_spin_And_there_is_no_telling_who_That_its_naming_For_the_loser_now_Will_be_later_to_win_For_the_times_they_are_a-changing^'
+    pswdIterations: 65536
+    salt: '^S4l4t#f-$24d08m1988yt4mp1c0$02s12dds1212212@$@4&~#%^$*'
+messages:
+    empty: El campo no puede estar vacio
+    gender: Solo se permite F,M
+    invalid: Dato invalido
+    invalidMail: El correo es invalido
+    lAndPhoneNumber: 'lada mas telefono no es igual a 10:'
+    leter: Solo se permite letras
+    leterAndSpace: Solo se permite letras y espacios
+    leterNumbersAndSpace: Solo se permite letras,numeros y espacios
+    noData: No se han proporcionado datos para procesar
+    numbersOnly: Solo se permiten numeros
+    requiredField: El campo  es necesario
+    trueFalse: Solo se permite true,false
+    validRange: 'el rango valido es: '
+    wrongData: Dato(s) incorecto(s)
+    zeroOne: 0 | 1
+            
