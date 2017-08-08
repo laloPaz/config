@@ -28,8 +28,6 @@ hystrix:
           thread:
             timeoutInMilliseconds: 120000
             
-s080.ribbon.listOfServers: http://192.168.10.147:7778
-
 feign:
 #    name: S080Dummy
     #url: http://150.110.186.56:50719
