@@ -1,12 +1,12 @@
 variables:
   eureka:
-    #host: localhost
-    host: service-registry-host
+    host: localhost
+    #host: service-registry-host
     port: 8761
 info:
   component: Credit Card Microservice update
-#server:
-#  port: 7786
+server:
+  port: 7786
 spring:
   config:
     name: cc-apps-update-ms
