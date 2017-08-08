@@ -1,12 +1,12 @@
 variables:
   eureka:
-    host: localhost
-    #host: service-registry-host
+    #host: localhost
+    host: service-registry-host
     port: 8761
 info:
   component: Bureau Microservice
-server:
-  port: 7794
+#server:
+#  port: 7794
 spring:
   config:
     name: cc-bureau-accreditation-ms
@@ -33,11 +33,8 @@ hystrix:
 
 #UAT            
 addresses:
-    endPointBureau: http://192.168.10.166:8081/cc-credit-origination-ws/CreditOriginationService
-    endPointCatalogos: http://192.168.10.166:8081/cc-credit-origination-ws/CreditOriginationService
-    endPointCi: http://adlenovot430:8081/cc-app14-ws/App14Service
+    endPointBureau: https://b72780-vip.nam.nsroot.net:13081
+    endPointCatalogos: 0.0.0.0
+    endPointCi: https://B61646-vip.nam.nsroot.net:46600 
     endPointCiAdapter: 0.0.0.0
-    endPointDefault: 0.0.0.0
-    #endPointBureau: https://b72780-vip.nam.nsroot.net:13081
-    #endPointCatalogos: 0.0.0.0
-    #endPointCi: https://B61646-vip.nam.nsroot.net:46600            
+    endPointDefault: 0.0.0.0            
