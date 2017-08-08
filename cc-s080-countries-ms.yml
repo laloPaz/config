@@ -27,9 +27,7 @@ logging:
     
 feign:
     url: https://www.mobileuat.banamex.com
-    #url: http://192.168.11.58:7778
-    #url: http://150.110.186.56:50719  
-    
+    #url: http://192.168.11.58:7778      
     
 hystrix:
   command:
@@ -38,13 +36,3 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 120000
-            
-# Max number of retries on the same server (excluding the first try)
-ribbon:
-    maxAutoRetries : 1
-
-# Max number of next servers to retry (excluding the first server)
-ribbon:
-    MaxAutoRetriesNextServer : 2         
-    ReadTimeout : 150000    
-    ConnectTimeout : 150000
