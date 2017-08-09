@@ -26,8 +26,8 @@ logging:
     com.banamex.portal.microservice.cccicardsms: DEBUG
     
 feign:
-    #url: https://www.mobileuat.banamex.com
-    url: http://192.168.11.58:7778
+    url: https://www.mobileuat.banamex.com
+    #url: http://192.168.11.58:7778
 
 addresses:
     endPointBureau: http://192.168.10.166:8081/cc-credit-origination-ws/CreditOriginationService
