@@ -1,7 +1,7 @@
 variables:
   eureka:
-    #host: localhost
-    host: service-registry-host
+    host: localhost
+    #host: service-registry-host
     port: 8761
 info:
   component: Microservicio que obtiene el listado de tarjetas de un determinado cliente utilizando dos opciones el número de cliente o el nombre y la fecha de nacimiento, siendo el número de cliente prioritario si se proporcionan todos los datos.
