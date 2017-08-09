@@ -33,7 +33,7 @@ hystrix:
 
 #UAT            
 addresses:
-    endPointBureau: https://b72780-vip.nam.nsroot.net:13081
+    endPointBureau: http://adlenovot430:8081/cc-credit-origination-ws/CreditOriginationService
     endPointCatalogos: 0.0.0.0
     endPointCi: https://B61646-vip.nam.nsroot.net:46600 
     endPointCiAdapter: 0.0.0.0
