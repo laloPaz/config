@@ -33,6 +33,7 @@ addresses:
     endPointBureau: http://192.168.10.166:8081/cc-credit-origination-ws/CreditOriginationService
     endPointCatalogos: http://192.168.10.166:8081/cc-credit-origination-ws/CreditOriginationService
     endPointCi: http://adlenovot430:8081/cc-app15-ws/App15Service
+    #endPointCi: http://169.178.114.161:5999/SvcImpl/common/MX/application/v3_2_MX_15/SOAPEndpoint/ApplicationService.serviceagent/OpEndpointHTTP
     endPointCiAdapter: '?'
     endPointDefault: 0.0.0.0        
     
