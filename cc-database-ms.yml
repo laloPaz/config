@@ -26,8 +26,8 @@ logging:
    com.banamex.portal.microservice.ccdatabasems: DEBUG
 
 db.driverClass: oracle.jdbc.OracleDriver
-#db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
-db.jdbcUrl: jdbc:oracle:thin:@192.168.10.166:1521:xe
+db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
+#db.jdbcUrl: jdbc:oracle:thin:@192.168.10.166:1521:xe
 db.user: CC
 db.password: password
 
