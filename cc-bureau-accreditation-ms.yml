@@ -39,7 +39,7 @@ addresses:
     endPointCiAdapter: 0.0.0.0
     endPointDefault: 0.0.0.0            
  
- feign:
+feign:
     name: S016Back
     #url: http://150.110.186.56:50719
     #url: http://localhost:8762
