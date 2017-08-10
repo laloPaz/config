@@ -4,14 +4,14 @@ variables:
     #host: service-registry-host
     port: 8761
 info:
-  component: Bureau Microservice
+  component: Proccess Credit Card Microservice
 server:
-  port: 7794
+  port: 7789
 spring:
   config:
-    name: cc-bureau-accreditation-ms
+    name: cc-apps-process-ms
   application:
-    name: cc-bureau-accreditation-ms
+    name: cc-apps-process-ms
 
 logging:
   level:
@@ -30,21 +30,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 120000
-
-#UAT            
-addresses:
-    endPointBureau: http://adlenovot430:8081/cc-credit-origination-ws/CreditOriginationService
-    endPointCatalogos: 0.0.0.0
-    endPointCi: https://B61646-vip.nam.nsroot.net:46600 
-    endPointCiAdapter: 0.0.0.0
-    endPointDefault: 0.0.0.0            
- 
-feign:
-    name: S016Back
-    #url: http://150.110.186.56:50719
-    #url: http://localhost:8762
-    url:  https://www.mobileuat.banamex.com
-
+            
 messages:
     empty: Field may not be empty
     gender: Only F, M
