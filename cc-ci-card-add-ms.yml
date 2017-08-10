@@ -1,0 +1,44 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+info:
+  component: Microservicio hace un subllamado, url no expuesta para agregar datos de un cliente a una tarjeta de credito
+server:
+  port: 7796
+spring:
+  config:
+    name: cc-ci-card-add-ms
+  application:
+    name: cc-ci-card-add-ms
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+    
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.cccicardaddms: DEBUG
+    
+feign:
+    url: https://www.mobileuat.banamex.com    
+    
+addresses:
+    endPointBureau: http://192.168.10.166:8081/cc-credit-origination-ws/CreditOriginationService
+    endPointCatalogos: http://192.168.10.166:8081/cc-credit-origination-ws/CreditOriginationService
+    endPointCi: http://adlenovot430:8081/cc-app14-ws/App14Service
+    endPointCiAdapter: '?'
+    endPointDefault: 0.0.0.0        
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
