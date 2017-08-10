@@ -1,0 +1,49 @@
+variables:
+  eureka:
+    #host: localhost
+    host: service-registry-host
+    port: 8761
+info:
+  component: Proccess Credit Card Microservice
+#server:
+#  port: 7789
+spring:
+  config:
+    name: cc-apps-process-ms
+  application:
+    name: cc-apps-process-ms
+
+logging:
+  level:
+    com.banamex.portal: DEBUG
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+            
+messages:
+    empty: Field may not be empty
+    gender: Only F, M
+    invalid: Invalid data
+    invalidMail: Invalid email
+    lAndPhoneNumber: 'Lada more phone is not equal to 10:'
+    leter: Only letters are allowed
+    leterAndSpace: Only letters and spaces are allowed
+    leterNumbersAndSpace: Only letters, numbers and spaces are allowed
+    noData: No data has been provided to process
+    numbersOnly: Only numbers are allowed
+    requiredField: Field is required
+    trueFalse: Only true, false
+    validRange: 'The valid range is: '
+    wrongData: Incorrect data
+    zeroOne: 0 | 1
