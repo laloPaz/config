@@ -1,12 +1,12 @@
 variables:
   eureka:
-    #host: localhost
-    host: service-registry-host
+    host: localhost
+    #host: service-registry-host
     port: 8761
 info:
   component: Proccess Credit Card Microservice
-#server:
-#  port: 7789
+server:
+  port: 7789
 spring:
   config:
     name: cc-apps-process-ms

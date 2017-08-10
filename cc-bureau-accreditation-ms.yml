@@ -43,4 +43,21 @@ feign:
     name: S016Back
     #url: http://150.110.186.56:50719
     #url: http://localhost:8762
-    url:  https://www.mobileuat.banamex.com 
+    url:  https://www.mobileuat.banamex.com
+
+messages:
+    empty: Field may not be empty
+    gender: Only F, M
+    invalid: Invalid data
+    invalidMail: Invalid email
+    lAndPhoneNumber: 'Lada more phone is not equal to 10:'
+    leter: Only letters are allowed
+    leterAndSpace: Only letters and spaces are allowed
+    leterNumbersAndSpace: Only letters, numbers and spaces are allowed
+    noData: No data has been provided to process
+    numbersOnly: Only numbers are allowed
+    requiredField: Field is required
+    trueFalse: Only true, false
+    validRange: 'The valid range is: '
+    wrongData: Incorrect data
+    zeroOne: 0 | 1
