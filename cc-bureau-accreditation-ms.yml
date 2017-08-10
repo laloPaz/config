@@ -61,3 +61,5 @@ messages:
     validRange: 'The valid range is: '
     wrongData: Incorrect data
     zeroOne: 0 | 1
+    invalidRange: 'El rango valido es:' 
+    invalidFormat: 'Formato invalido:'
