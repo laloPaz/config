@@ -1,0 +1,45 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+info:
+  component: Microservicio que hace un subllamado a una url no expuesta para obtener el estatus de una tarjeta de credito(ejemplo Denegada).
+server:
+  port: 7797
+spring:
+  config:
+    name: cc-ci-status-ms
+  application:
+    name: cc-ci-status-ms
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+    
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.ewtms: DEBUG    
+    
+feign:
+    url: https://www.mobileuat.banamex.com
+    #url: http://192.168.11.58:7778    
+    
+addresses:
+    endPointBureau: http://192.168.10.166:8081/cc-credit-origination-ws/CreditOriginationService
+    endPointCatalogos: http://192.168.10.166:8081/cc-credit-origination-ws/CreditOriginationService
+    endPointCi: http://adlenovot430:8081/cc-app11-ws/App11Service
+    endPointCiAdapter: '?'
+    endPointDefault: 0.0.0.0    
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
