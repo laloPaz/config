@@ -1,12 +1,12 @@
 variables:
   eureka:
-    #host: localhost
-    host: service-registry-host
+    host: localhost
+    #host: service-registry-host
     port: 8761
 info:
   component: Bureau Microservice
-#server:
-#  port: 7794
+server:
+  port: 7794
 spring:
   config:
     name: cc-bureau-accreditation-ms
