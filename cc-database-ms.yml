@@ -27,9 +27,10 @@ logging:
 
 db.driverClass: oracle.jdbc.OracleDriver
 #db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
-db.jdbcUrl: jdbc:oracle:thin:@192.168.10.166:1521:xe
+db.jdbcUrl: jdbc:oracle:thin:@172.17.0.1:1521:xe
 db.user: CC
 db.password: password
+
 
 c3p0.minPoolSize: 4
 c3p0.maxPoolSize: 20
