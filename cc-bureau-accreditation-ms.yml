@@ -46,7 +46,7 @@ feign:
     name: BuroBack
     #url: http://150.110.186.56:50719
     #url: http://localhost:8762
-    url:  https://www.mobileuat.banamex.com
+    url:  https://www.mobileuat.banamex.co
 
 messages:
     empty: Field may not be empty
