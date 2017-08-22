@@ -4,7 +4,7 @@ variables:
     #host: service-registry-host
     port: 8761
   redis:
-    host: localhost
+    host: 192.168.10.114
     #host: redis-host
     port: 6379
 
