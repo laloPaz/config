@@ -9,9 +9,9 @@ server:
   port: 7609
 spring:
   config:
-    name: cc-custumer-nc-ms
+    name: cc-apps-customer-nc-ms
   application:
-    name: cc-custumer-nc-ms
+    name: cc-apps-customer-nc-ms
 eureka:
   client:
     serviceUrl:

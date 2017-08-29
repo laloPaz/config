@@ -9,9 +9,9 @@ server:
   port: 7705
 spring:
   config:
-    name: cc-apps-custumer-ms
+    name: cc-apps-customer-ms
   application:
-    name: cc-apps-custumer-ms
+    name: cc-apps-customer-ms
 
 logging:
   level:
