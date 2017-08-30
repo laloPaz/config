@@ -26,12 +26,23 @@ logging:
     com.banamex.portal.microservice.ccappsbureauqueryms: DEBUG
 
 messages:
-  noData: No se han proporcionado datos para procesar.
-  requiredField: El campo es necesario.
-  invalidMail: El correo es invalido.
-  numbersOnly: Solo se permiten numeros.
-  invalidRange: 'El rango valido es:' 
-  invalidFormat: 'Formato invalido:'      
+    empty: Field may not be empty
+    gender: Only F, M
+    invalid: Invalid data
+    invalidMail: Invalid email
+    lAndPhoneNumber: 'Lada more phone is not equal to 10:'
+    leter: Only letters are allowed
+    leterAndSpace: Only letters and spaces are allowed
+    leterNumbersAndSpace: Only letters, numbers and spaces are allowed
+    noData: No data has been provided to process
+    numbersOnly: Only numbers are allowed
+    requiredField: Field is required
+    trueFalse: Only true, false
+    validRange: 'The valid range is: '
+    wrongData: Incorrect data
+    zeroOne: 0 | 1
+    invalidFormat: 'Invalid Format:'    
+    invalidRange: 'The range is:'
     
 hystrix:
   command:
