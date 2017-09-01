@@ -25,6 +25,25 @@ logging:
     org.springframework.web: INFO
     com.banamex.portal.microservice.cccicardaddms: DEBUG
     
+messages:
+    empty: Field may not be empty
+    gender: Only F, M
+    invalid: Invalid data
+    invalidMail: Invalid email
+    lAndPhoneNumber: 'Lada more phone is not equal to 10:'
+    leter: Only letters are allowed
+    leterAndSpace: Only letters and spaces are allowed
+    leterNumbersAndSpace: Only letters, numbers and spaces are allowed
+    noData: No data has been provided to process
+    numbersOnly: Only numbers are allowed
+    requiredField: Field is required
+    trueFalse: Only true, false
+    validRange: 'The valid range is: '
+    wrongData: Incorrect data
+    zeroOne: 0 | 1
+    invalidFormat: 'Invalid Format:'    
+    invalidRange: 'The range is:'    
+    
 feign:
     url: https://www.mobileuat.banamex.com    
     
