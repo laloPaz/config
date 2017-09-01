@@ -10,5 +10,4 @@ eureka:
   client:
     serviceUrl:
      defaultZone: https://eureka-03262bb0-d54b-4dad-814c-cfb6f38cd75b.cfapps.io
-    registerWithEureka: true
   
