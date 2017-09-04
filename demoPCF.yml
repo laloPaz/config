@@ -6,11 +6,11 @@ spring:
       registrationMethod: direct
 #server:
 #  port: 7701
-
+---
 
 spring:
   profiles: dev
-  
+
 security:
   basic:
-    enabled: false  
+    enabled: false
