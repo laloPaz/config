@@ -12,13 +12,25 @@ spring:
     name: ewt-database-ms
   application:
     name: ewt-database-ms
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
-    registerWithEureka: true
-  instance:
-    preferIpAddress: true
+  cloud:
+    services:
+      registrationMethod: direct
+---
+
+spring:
+  profiles: dev
+
+security:
+  basic:
+    enabled: false
+    
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+#    registerWithEureka: true
+#  instance:
+#    preferIpAddress: true
 
 logging:
   level:
@@ -26,8 +38,8 @@ logging:
     com.banamex.portal.microservice.ewtdatabasems: DEBUG
 
 db.driverClass: oracle.jdbc.OracleDriver
-#db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
-db.jdbcUrl: jdbc:oracle:thin:@172.17.0.1:1521:xe
+db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
+#db.jdbcUrl: jdbc:oracle:thin:@172.17.0.1:1521:xe
 db.user: EWT
 db.password: password
 
