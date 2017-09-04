@@ -1,8 +1,6 @@
 spring:
   application:
     name: demoPCF
-  config:
-    name: demoPCF
 server:
   port: 7701
 
