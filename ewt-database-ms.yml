@@ -33,14 +33,14 @@ logging:
     org.springframework.web: INFO
     com.banamex.portal.microservice.ewtdatabasems: DEBUG
 
-db.driverClass: oracle.jdbc.OracleDriver
-db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
+#db.driverClass: oracle.jdbc.OracleDriver
+#db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
 #db.jdbcUrl: jdbc:oracle:thin:@172.17.0.1:1521:xe
-db.user: EWT
-db.password: password
+#db.user: EWT
+#db.password: password
 
-c3p0.minPoolSize: 4
-c3p0.maxPoolSize: 20
-c3p0.acquireIncrement: 2
-c3p0.breakAfterAcquireFailure: false
-c3p0.maxIdleTime: 10
+#c3p0.minPoolSize: 4
+#c3p0.maxPoolSize: 20
+#c3p0.acquireIncrement: 2
+#c3p0.breakAfterAcquireFailure: false
+#c3p0.maxIdleTime: 10
