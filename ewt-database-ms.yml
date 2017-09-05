@@ -48,7 +48,7 @@ logging:
 
 
 db.driverClass: ${vcap.services.user-provided.credentials.driver-class}
-db.jdbcUrl:${vcap.services.user-provided.credentials.jdbc-url}
+db.jdbcUrl: ${vcap.services.user-provided.credentials.jdbc-url}
 db.user: ${vcap.services.user-provided.credentials.user}
 db.password: ${vcap.services.user-provided.credentials.password}
 
