@@ -33,27 +33,27 @@ logging:
     org.springframework.web: INFO
     com.banamex.portal.microservice.ewtdatabasems: DEBUG
 
-#db.driverClass: oracle.jdbc.OracleDriver
-#db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
+db.driverClass: oracle.jdbc.OracleDriver
+db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
 #db.jdbcUrl: jdbc:oracle:thin:@172.17.0.1:1521:xe
-#db.user: EWT
-#db.password: password
+db.user: EWT
+db.password: password
 
-#c3p0.minPoolSize: 4
-#c3p0.maxPoolSize: 20
-#c3p0.acquireIncrement: 2
-#c3p0.breakAfterAcquireFailure: false
-#c3p0.maxIdleTime: 10
+c3p0.minPoolSize: 4
+c3p0.maxPoolSize: 20
+c3p0.acquireIncrement: 2
+c3p0.breakAfterAcquireFailure: false
+c3p0.maxIdleTime: 10
 
 
 
-db.driverClass: ${vcap.services.user-provided.credentials.db.driverClass}
-db.jdbcUrl: ${vcap.services.user-provided.credentials.db.jdbcUrl}
-db.user: ${vcap.services.user-provided.credentials.db.user}
-db.password: ${vcap.services.user-provided.credentials.db.password}
+#db.driverClass: ${vcap.services.user-provided.credentials.db.driverClass}
+#db.jdbcUrl: ${vcap.services.user-provided.credentials.db.jdbcUrl}
+#db.user: ${vcap.services.user-provided.credentials.db.user}
+#db.password: ${vcap.services.user-provided.credentials.db.password}
 
-c3p0.minPoolSize: ${vcap.services.user-provided.credentials.c3p0.minPoolSize}
-c3p0.maxPoolSize: ${vcap.services.user-provided.credentials.c3p0.maxPoolSize}
-c3p0.acquireIncrement: ${vcap.services.user-provided.credentials.c3p0.acquireIncrement}
-c3p0.breakAfterAcquireFailure: ${vcap.services.user-provided.credentials.c3p0.breakAfterAcquireFailure}
-c3p0.maxIdleTime: ${vcap.services.user-provided.credentials.c3p0.maxIdleTime}
+#c3p0.minPoolSize: ${vcap.services.user-provided.credentials.c3p0.minPoolSize}
+#c3p0.maxPoolSize: ${vcap.services.user-provided.credentials.c3p0.maxPoolSize}
+#c3p0.acquireIncrement: ${vcap.services.user-provided.credentials.c3p0.acquireIncrement}
+#c3p0.breakAfterAcquireFailure: ${vcap.services.user-provided.credentials.c3p0.breakAfterAcquireFailure}
+#c3p0.maxIdleTime: ${vcap.services.user-provided.credentials.c3p0.maxIdleTime}
