@@ -14,7 +14,7 @@ spring:
     name: ewt-ms
   cloud:
     services:
-      registrationMethod: direct
+      registrationMethod: route
 
 security:
   basic:
