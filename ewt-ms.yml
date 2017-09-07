@@ -1,0 +1,34 @@
+variables:
+  eureka:
+    #host: localhost
+    host: service-registry-host
+    port: 8761
+info:
+  component: Microservicio de Tiempos de espera estimados en sucursal (ewt)
+#server:
+#  port: 7720
+spring:
+  config:
+    name: ewt-ms
+  application:
+    name: ewt-ms
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.ewtms: DEBUG
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
