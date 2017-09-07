@@ -1,8 +1,3 @@
-variables:
-  eureka:
-    #host: localhost
-    host: service-registry-host
-    port: 8761
 info:
   component: Microservicio de Base de Datos
 #server:
@@ -15,37 +10,14 @@ spring:
   cloud:
     services:
       registrationMethod: route
-
 security:
   basic:
     enabled: false
-    
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
-#    registerWithEureka: true
-#  instance:
-#    preferIpAddress: true
 
 logging:
   level:
     org.springframework.web: INFO
     com.banamex.portal.microservice.ewtdatabasems: DEBUG
-
-#db.driverClass: oracle.jdbc.OracleDriver
-#db.jdbcUrl: jdbc:oracle:thin:@34.230.196.141:1521:xe
-#db.jdbcUrl: jdbc:oracle:thin:@172.17.0.1:1521:xe
-#db.user: EWT
-#db.password: password
-
-#c3p0.minPoolSize: 4
-#c3p0.maxPoolSize: 20
-#c3p0.acquireIncrement: 2
-#c3p0.breakAfterAcquireFailure: false
-#c3p0.maxIdleTime: 10
-
-
 
 db.driverClass: ${vcap.services.oracle-database-service.credentials.driver-class}
 db.jdbcUrl: ${vcap.services.oracle-database-service.credentials.jdbc-url}
