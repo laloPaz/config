@@ -28,4 +28,4 @@ c3p0.minPoolSize: ${vcap.services.oracle-database-service.credentials.min-pool-s
 c3p0.maxPoolSize: ${vcap.services.oracle-database-service.credentials.max-pool-size}
 c3p0.acquireIncrement: ${vcap.services.oracle-database-service.credentials.acquire-increment}
 c3p0.breakAfterAcquireFailure: ${vcap.services.oracle-database-service.credentials.break-after-acquire-failure}
-
+c3p0.maxIdleTime: ${vcap.services.oracle-database-service.credentials.max-idle-time}
