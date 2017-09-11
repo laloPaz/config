@@ -1,12 +1,12 @@
 variables:
   eureka:
-    #host: localhost
-    host: service-registry-host
+    host: localhost
+    #host: service-registry-host
     port: 8761
 info:
   component: Microservice for creating, reading and updating portal users
-#server:
-#  port: 7702
+server:
+  port: 7702
 spring:
   config:
     name: portal-users-ms
