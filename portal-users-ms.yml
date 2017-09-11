@@ -1,0 +1,34 @@
+variables:
+  eureka:
+    #host: localhost
+    host: service-registry-host
+    port: 8761
+info:
+  component: Microservice for creating, reading and updating portal users
+#server:
+#  port: 7702
+spring:
+  config:
+    name: portal-users-ms
+  application:
+    name: portal-users-ms
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.userscreatems: DEBUG
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
