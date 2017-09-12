@@ -1,0 +1,33 @@
+variables:
+  eureka:
+    #host: localhost
+    host: service-registry-host
+    port: 8761
+info:
+  component: Credit Card Microservicio Crate
+#server:
+#  port: 7788
+spring:
+  config:
+    name: cc-apps-status-ms
+  application:
+    name: cc-apps-status-ms
+
+logging:
+ level:
+   org.springframework.web: INFO
+   com.banamex.portal.microservice.ccappsstatusms: DEBUG
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
