@@ -1,12 +1,12 @@
 variables:
   eureka:
-    #host: localhost
-    host: service-registry-host
+    host: localhost
+    #host: service-registry-host
     port: 8761
 info:
   component: Credit Card Microservicio Crate
-#server:
-#  port: 7788
+server:
+  port: 7788
 spring:
   config:
     name: cc-apps-status-ms
