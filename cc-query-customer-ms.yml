@@ -1,0 +1,32 @@
+variables:
+  eureka:
+    #host: service-registry-host
+    host: localhost
+    port: 8761
+info:
+  component: Microservice of query operations in virtual tables
+server:
+  port: 7771
+spring:
+  config:
+    name: cc-query-customer-ms
+  application:
+    name: cc-query-customer-ms
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.vtvttablescountms: DEBUG
