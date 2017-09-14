@@ -9,9 +9,9 @@ server:
   port: 7771
 spring:
   config:
-    name: cc-query-customer-ms
+    name: vt-query-ms
   application:
-    name: cc-query-customer-ms
+    name: vt-query-ms
 eureka:
   client:
     serviceUrl:
