@@ -6,7 +6,7 @@ variables:
 info:
   component: Microservicio de operaciones dml en tablas virtuales
 server:
-  port: 7771
+  port: 7777
 spring:
   config:
     name: vt-vtables-query-count-ms
