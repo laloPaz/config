@@ -1,12 +1,12 @@
 variables:
   eureka:
-    host: service-registry-host
-    #host: localhost
+    #host: service-registry-host
+    host: localhost
     port: 8761
 info:
   component: Microservicio de operaciones dml en tablas virtuales
-#server:
-#  port: 7771
+server:
+  port: 7771
 spring:
   config:
     name: vt-vtables-query-count-ms
