@@ -1,12 +1,12 @@
 variables:
   eureka:
-    #host: localhost
-    host: service-registry-host
+    host: localhost
+    #host: service-registry-host
     port: 8761
 info:
   component: Microservicio para consulta de metales
-#server:
-  #port: 7745
+server:
+  port: 7745
 spring:
   config:
     name: ef-metals-ms
