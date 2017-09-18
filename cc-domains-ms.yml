@@ -1,0 +1,35 @@
+variables:
+  eureka:
+#    host: service-registry-host
+    host: localhost
+    port: 8761
+info:
+  component: Create a new Crossell domain
+server:
+  port: 7803
+spring:
+  config:
+    name: cc-domains-ms
+  application:
+    name: cc-domains-ms
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+    
+logging:
+    level:
+        com.banamex.portal.microservice.ccxselldomainscreatems: DEBUG
+        org.springframework.web: INFO    
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+      
