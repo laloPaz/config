@@ -1,0 +1,67 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+info:
+  component: Bureau Microservice
+server:
+  port: 7794
+spring:
+  config:
+    name: cc-bureau-ms
+  application:
+    name: cc-bureau-ms
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.ccbureauaccreditationms: DEBUG
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+
+#UAT            
+addresses:
+    endPointBureau: https://b72780-vip.nam.nsroot.net:13081
+    endPointCatalogos: 0.0.0.0
+    endPointCi: https://B61646-vip.nam.nsroot.net:46600 
+    endPointCiAdapter: 0.0.0.0
+    endPointDefault: 0.0.0.0      
+
+feign:
+    name: BuroBack
+    #url: http://150.110.186.56:50719
+    #url: http://localhost:8762
+    url:  https://www.mobileuat.banamex.com
+
+messages:
+    empty: Field may not be empty
+    gender: Only F, M
+    invalid: Invalid data
+    invalidMail: Invalid email
+    lAndPhoneNumber: 'Lada more phone is not equal to 10:'
+    leter: Only letters are allowed
+    leterAndSpace: Only letters and spaces are allowed
+    leterNumbersAndSpace: Only letters, numbers and spaces are allowed
+    noData: No data has been provided to process
+    numbersOnly: Only numbers are allowed
+    requiredField: Field is required
+    trueFalse: Only true, false
+    validRange: 'The valid range is: '
+    wrongData: Incorrect data
+    zeroOne: 0 | 1
+    invalidFormat: 'Invalid Format:'    
