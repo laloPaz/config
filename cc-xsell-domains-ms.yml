@@ -9,9 +9,9 @@ server:
   port: 7803
 spring:
   config:
-    name: cc-domains-ms
+    name: cc-xsell-domains-ms
   application:
-    name: cc-domains-ms
+    name: cc-xsell-domains-ms
 eureka:
   client:
     serviceUrl:
