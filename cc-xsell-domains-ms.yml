@@ -4,7 +4,7 @@ variables:
     host: localhost
     port: 8761
 info:
-  component: Create a new Crossell domain
+  component: Crossell domain operations
 server:
   port: 7803
 spring:
