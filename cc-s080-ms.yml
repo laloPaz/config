@@ -1,4 +1,3 @@
-
 variables:
   eureka:
     host: localhost
@@ -7,12 +6,12 @@ variables:
 info:
   component: Adress by cp
 server:
-  port: 7870
+  port: 7807
 spring:
   config:
-    name: cc-s080-ms
+    name: cc-s080-adress-cp-ms
   application:
-    name: cc-s080-ms
+    name: cc-s080-adress-cp-ms
 
 eureka:
   client:
@@ -30,11 +29,11 @@ hystrix:
             timeoutInMilliseconds: 120000
             
 feign:
-   url: https://www.mobileuat.banamex.com
-   #name: S080Dummy
-   #url: http://150.110.186.56:50719
-   #url: http://localhost:7778
-   
+#    name: S080Dummy
+    #url: http://150.110.186.56:50719
+    #url: http://localhost:7778
+    url:  https://www.mobileuat.banamex.com
+
 logging:
     level:
         com:
