@@ -7,7 +7,7 @@ variables:
 info:
   component: Adress by cp
 server:
-  port: 7807
+  port: 7870
 spring:
   config:
     name: cc-s080-ms
