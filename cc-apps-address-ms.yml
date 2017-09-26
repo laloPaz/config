@@ -1,14 +1,14 @@
 variables:
   eureka:
-    #host: localhost
-    host: service-registry-host
+    host: localhost
+    #host: service-registry-host
     port: 8761
 
 info:
   component: Microservice that returns address info by criteria such as colonia, state and zip code.
 
-#server:
-#  port: 7787
+server:
+  port: 7787
 
 spring:
   config:
