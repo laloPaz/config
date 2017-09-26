@@ -1,17 +1,21 @@
 variables:
   eureka:
-    host: localhost
-    #host: service-registry-host
+    #host: localhost
+    host: service-registry-host
     port: 8761
+
 info:
-  component: Microservicio de Adress por CP
-server:
-  port: 7787
+  component: Microservice that returns address info by criteria such as colonia, state and zip code.
+
+#server:
+#  port: 7787
+
 spring:
   config:
     name: cc-apps-address-ms
   application:
     name: cc-apps-address-ms
+
 eureka:
   client:
     serviceUrl:
@@ -19,6 +23,7 @@ eureka:
     registerWithEureka: true
   instance:
     preferIpAddress: true
+
 hystrix:
   command:
     default:
@@ -26,3 +31,12 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 120000
+
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 120000
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.ccappsaddressms: DEBUG            
