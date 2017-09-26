@@ -30,7 +30,7 @@ hystrix:
             timeoutInMilliseconds: 120000
             
 feign:
-   url:  https://www.mobileuat.banamex.com
+   url: https://www.mobileuat.banamex.com
    #name: S080Dummy
    #url: http://150.110.186.56:50719
    #url: http://localhost:7778
