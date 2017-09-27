@@ -9,9 +9,9 @@ server:
   port: 7807
 spring:
   config:
-    name: cc-s080-adress-cp-ms
+    name: cc-s080-ms
   application:
-    name: cc-s080-adress-cp-ms
+    name: cc-s080-ms
 
 eureka:
   client:
