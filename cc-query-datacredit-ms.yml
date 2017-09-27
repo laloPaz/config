@@ -1,14 +1,14 @@
 variables:
   eureka:
-#    host: localhost
-    host: service-registry-host
+    host: localhost
+#    host: service-registry-host
     port: 8761
 
 info:
   component: Microservicio que devuelve la informacion de una solicitud por folio de base de datos, celular y mail
 
-#server:
-#  port: 7783
+server:
+  port: 7783
 
 spring:
   config:
