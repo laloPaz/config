@@ -1,0 +1,38 @@
+variables:
+  eureka:
+#    host: localhost
+    host: service-registry-host
+    port: 8761
+
+info:
+  component: Microservicio que devuelve la informacion de una solicitud por folio de base de datos, celular y mail
+
+#server:
+#  port: 7783
+
+spring:
+  config:
+    name: cc-query-datacredit-ms
+  application:
+    name: cc-query-datacredit-ms
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+    
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.ccquerydatacreditms: DEBUG
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
