@@ -1,19 +1,22 @@
 variables:
   eureka:
-    host: localhost
-    #host: service-registry-host
+    #host: localhost
+    host: service-registry-host
     port: 8761
   redis:
-    host: 192.168.10.114
-    #host: redis-host
+    #host: localhost
+    host: redis-host
     port: 6379
 
 info:
   component: PortalMicroservices gateway ms (based on Netflix Zuul)
+
 server:
   port: 7690
+
 security:
   sessions: ALWAYS
+
 spring:
   config:
     name: gateway-ms
@@ -24,6 +27,10 @@ spring:
   redis:
     host: ${variables.redis.host}
     port: ${variables.redis.port}
+  http:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
 
 zuul:
   routes:
@@ -35,75 +42,33 @@ zuul:
     ewt-ms:
       path: /ewt/**
       serviceId: ewt-ms
-    
+
     # EF
-    ef-dollar-summary-ms:
-      path: /ef-dollar-summary/**
-      serviceId: ef-dollar-summary-ms
     ef-dollar-ms:
       path: /ef-dollar/**
       serviceId: ef-dollar-ms
     ef-currencies-ms:
       path: /ef-currencies/**
       serviceId: ef-currencies-ms
-    ef-currencies-summary-ms:
-      path: /ef-currencies-summary/**
-      serviceId: ef-currencies-summary-ms
-    ef-currencies-continent-ms:
-      path: /ef-currencies-continent/**
-      serviceId: ef-currencies-continent-ms
-    ef-metal-ms:
+    ef-metals-ms:
       path: /ef-metals/**
       serviceId: ef-metals-ms
-    ef-metals-summary-ms:
-      path: /ef-metals-summary/**
-      serviceId: ef-metals-summary-ms
-    
+
     # VT
-    vt-vtables-read-ms:
-      path: /vt-vtables-read/**
-      serviceId: vt-vtables-read-ms
-    vt-vtables-create-ms:
-      path: /vt-vtables-create/**
-      serviceId: vt-vtables-create-ms
-    vt-vtables-alter-ms:
-      path: /vt-vtables-alter/**
-      serviceId: vt-vtables-alter-ms
-    vt-vtables-drop-ms:
-      path: /vt-vtables-drop/**
-      serviceId: vt-vtables-drop-ms
-    vt-vtables-log-ms:
-      path: /vt-vtables-log/**
-      serviceId: vt-vtables-log-ms
-    vt-vtables-data-insert-ms:
-      path: /vt-vtables-data-insert/**
-      serviceId: vt-vtables-data-insert-ms
-    vt-vtables-data-update-ms:
-      path: /vt-vtables-data-update/**
-      serviceId: vt-vtables-data-update-ms
-    vt-vtables-data-delete-ms:
-      path: /vt-vtables-data-delete/**
-      serviceId: vt-vtables-data-delete-ms
-    vt-vtables-data-insert-bulk-ms:
-      path: /vt-vtables-data-insert-bulk/**
-      serviceId: vt-vtables-data-insert-bulk-ms
-    vt-vtables-data-between-ms:
-      path: /vt-vtables-data-between/**
-      serviceId: vt-vtables-data-between-ms
-    vt-vtables-query-ms:
-      path: /vt-vtables-query/**
-      serviceId: vt-vtables-query-ms
-    vt-vtables-query-count-ms:
-      path: /vt-vtables-query-count/**
-      serviceId: vt-vtables-query-count-ms
-      
+    vt-ddl-ms:
+      path: /vt-ddl/**
+      serviceId: vt-ddl-ms
+    vt-dml-ms:
+      path: /vt-dml/**
+      serviceId: vt-dml-ms
+    vt-query-ms:
+      path: /vt-query/**
+      serviceId: vt-query-ms
+
     # CC
     cc-apps-customer-ms:
       path: /cc-apps-customer/**
       serviceId: cc-apps-customer-ms
-    cc-apps-customer-nc-ms:
-      path: /cc-apps-customer-nc/**
-      serviceId: cc-apps-customer-nc-ms
     cc-apps-msg-encrypt-ms:
       path: /cc-apps-msg-encrypt/**
       serviceId: cc-apps-msg-encrypt-ms
@@ -113,12 +78,9 @@ zuul:
     cc-apps-datacredit-otp-ms:
       path: /cc-apps-datacredit-otp/**
       serviceId: cc-apps-datacredit-otp-ms
-    cc-apps-create-ms:
-      path: /cc-apps-create/**
-      serviceId: cc-apps-create-ms
-    cc-apps-update-ms:
-      path: /cc-apps-update/**
-      serviceId: cc-apps-update-ms
+    cc-apps-write-ms:
+      path: /cc-apps-write/**
+      serviceId: cc-apps-write-ms
     cc-apps-address-ms:
       path: /cc-apps-address/**
       serviceId: cc-apps-address-ms
@@ -128,21 +90,15 @@ zuul:
     cc-apps-process-ms:
       path: /cc-apps-process/**
       serviceId: cc-apps-process-ms
-    cc-apps-datacredit-ci-ms:
-      path: /cc-apps-datacredit-ci/**
-      serviceId: cc-apps-datacredit-ci-ms
-    cc-apps-address-stt-col-ms:
-      path: /cc-apps-address-stt-col/**
-      serviceId: cc-apps-address-stt-col-ms
     cc-apps-bureau-query-ms:
       path: /cc-apps-bureau-query/**
       serviceId: cc-apps-bureau-query-ms
     cc-apps-sms-folio-send-ms:
       path: /cc-apps-sms-folio-send/**
       serviceId: cc-apps-sms-folio-send-ms
-    cc-bureau-accreditation-ms:
-      path: /cc-bureau-accreditation/**
-      serviceId: cc-bureau-accreditation-ms
+    cc-bureau-ms:
+      path: /cc-bureau/**
+      serviceId: cc-bureau-ms
     cc-ci-cards-ms:
       path: /cc-ci-cards/**
       serviceId: cc-ci-cards-ms
@@ -155,46 +111,25 @@ zuul:
     cc-s016-client-ms:
       path: /cc-s016-client/**
       serviceId: cc-s016-client-ms
-    cc-s080-countries-ms:
-      path: /cc-s080-countries/**
-      serviceId: cc-s080-countries-ms
-    cc-s080-adress-ms:
-      path: /cc-s080-adress/**
-      serviceId: cc-s080-adress-ms
-    cc-s080-adress-cp-ms:
-      path: /cc-s080-adress-cp/**
-      serviceId: cc-s080-adress-cp-ms
-    
+    cc-s080-ms:
+      path: /cc-s080/**
+      serviceId: cc-s080-ms
+
     # CC XSell
     cc-xsell-offers-ms:
       path: /cc-xsell-offers/**
       serviceId: cc-xsell-offers-ms
-    cc-xsell-domains-read-ms:
-      path: /cc-xsell-domains-read/**
-      serviceId: cc-xsell-domains-read-ms
-    cc-xsell-domains-read-status-ms:
-      path: /cc-xsell-domains-read-status/**
-      serviceId: cc-xsell-domains-read-status-ms
-    cc-xsell-domains-create-ms:
-      path: /cc-xsell-domains-create/**
-      serviceId: cc-xsell-domains-create-ms
-    cc-xsell-domains-update-ms:
-      path: /cc-xsell-domains-update/**
-      serviceId: cc-xsell-domains-update-ms
     cc-xsell-offers-upload-ms:
       path: /cc-xsell-offers-upload/**
       serviceId: cc-xsell-offers-upload-ms
-    
-    # Users
-    users-create-ms:
-      path: /users-create/**
-      serviceId: users-create-ms
-    users-update-ms:
-      path: /users-update/**
-      serviceId: users-update-ms
-    users-read-ms:
-      path: /users-read/**
-      serviceId: users-read-ms
+    cc-xsell-domains-ms:
+      path: /cc-xsell-domains/**
+      serviceId: cc-xsell-domains-ms
+
+    # Portal users
+    portal-users-ms:
+      path: /portal-users/**
+      serviceId: portal-users-ms
 
 eureka:
   client:
@@ -207,8 +142,8 @@ logging:
     org.springframework.web: INFO
     com.banamex.portal.microservice.gatewayms: DEBUG
 
-#10 minutos en timeout de respuesta y 5 minutos para tratar de conectarse
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 600000
+# 3 minutos de timeout de respuesta y 5 segundos para tratar de conectarse
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 180000
 ribbon:
-  ConnectTimeout: 300000
-  ReadTimeout: 600000
+  ConnectTimeout: 5000
+  ReadTimeout: 180000
