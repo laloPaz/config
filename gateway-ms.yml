@@ -3,11 +3,11 @@ variables:
     host: localhost
     #host: service-registry-host
     port: 8761
-  #redis:
+  redis:
     #host: localhost
     #host: redis-host
-  #  host: 192.168.10.205
-  #  port: 6379
+    host: 192.168.10.205
+    port: 6379
   #  configuration:
   #       secure:
   #            true
