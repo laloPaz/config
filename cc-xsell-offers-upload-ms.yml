@@ -1,0 +1,50 @@
+variables:
+  eureka:
+    host: localhost
+#    host: service-registry-host
+    port: 8761
+
+info:
+  component: Load a file into repository with crossell offers for a client, load all files from repository to offers and see log files uploaded
+
+server:
+  port: 7805
+
+spring:
+  config:
+    name: cc-xsell-offers-upload-ms
+  application:
+    name: cc-xsell-offers-upload-ms
+  http:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+    
+logging:
+    level:
+        org.springframework.web: INFO
+        com.banamex.portal.microservice.ccxselloffersuploadms: DEBUG
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
+
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 120000
+
+app:
+  threadPool: 5
+  cronExpression: 0 0/5 * * * ?
