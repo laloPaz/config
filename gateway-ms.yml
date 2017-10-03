@@ -116,9 +116,9 @@ zuul:
     cc-s016-client-ms:
       path: /cc-s016-client/**
       serviceId: cc-s016-client-ms
-    cc-s080-ms:
-      path: /cc-s080/**
-      serviceId: cc-s080-ms
+    cc-c080-ms:
+      path: /cc-c080/**
+      serviceId: cc-c080-ms
 
     # CC XSell
     cc-xsell-offers-ms:
