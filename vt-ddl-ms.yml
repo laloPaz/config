@@ -1,14 +1,14 @@
 variables:
   eureka:
-    #host: service-registry-host
-    host: localhost
+    host: service-registry-host
+    #host: localhost
     port: 8761
 
 info:
   component: Microservicio de operaciones ddl en tablas virtuales
 
-server:
-  port: 7761
+#server:
+#  port: 7761
 
 spring:
   config:
