@@ -23,7 +23,8 @@ eureka:
       defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
     registerWithEureka: true
   instance:
-    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:{random.value}}}
+    #instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:{random.value}}}
+    preferIpAddress: false
     #preferIpAddress: true
     
 logging:
