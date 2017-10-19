@@ -24,8 +24,7 @@ eureka:
     registerWithEureka: true
   instance:
     instanceId: ${spring.application.name}:${spring.application.instance_id:{random.value}}
-    preferIpAddress: false
-    #preferIpAddress: true
+    preferIpAddress: true
     
 logging:
   level:
