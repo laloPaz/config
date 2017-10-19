@@ -7,7 +7,8 @@ variables:
 info:
   component: Microservicio Servicio que regresa información de la dirección en base al nombre de la colonia y el ID del estado..
 
-#server:
+server:
+  port: 0
 #  port: 7806
 
 spring:
