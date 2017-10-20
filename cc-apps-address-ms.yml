@@ -34,7 +34,7 @@ hystrix:
 
 ribbon:
   ConnectTimeout: 500
-  ReadTimeout: 150
+  ReadTimeout: 500
 
 logging:
   level:
