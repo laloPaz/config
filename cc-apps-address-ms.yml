@@ -30,11 +30,11 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 500
+            timeoutInMilliseconds: 60000
 
 ribbon:
-  ConnectTimeout: 500
-  ReadTimeout: 500
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
 
 logging:
   level:
