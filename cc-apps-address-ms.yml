@@ -33,7 +33,7 @@ hystrix:
             timeoutInMilliseconds: 120000
 
 ribbon:
-  ConnectTimeout: 100
+  ConnectTimeout: 500
   ReadTimeout: 150
 
 logging:
