@@ -18,13 +18,16 @@ spring:
     name: cc-c080-ms
 
 eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}    
+    preferIpAddress: false
   client:
     serviceUrl:
       defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
     registerWithEureka: true
-  instance:
-    instanceId: ${spring.application.name}:${spring.application.instance_id:{random.value}}
-    preferIpAddress: true
+  
+    
+    
     
 logging:
   level:
