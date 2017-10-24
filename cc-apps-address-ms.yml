@@ -30,7 +30,11 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 120000
+            timeoutInMilliseconds: 120000 
+#  collapser:
+#    default:
+#      maxRequestsInBatch:50
+
 
 ribbon:
   ConnectTimeout: 3000
