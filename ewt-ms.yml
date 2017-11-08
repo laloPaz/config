@@ -1,7 +1,7 @@
 info:
   component: Microservicio de Tiempos de espera estimados en sucursal (ewt)
-#server:
-#  port: 7720
+server:
+  port: 7720
 spring:
   config:
     name: ewt-ms
