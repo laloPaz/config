@@ -1,7 +1,13 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+
 info:
   component: Microservicio de Base de Datos
-#server:
-#  port: 7706
+server:
+  port: 7706
 spring:
   config:
     name: ewt-database-ms
