@@ -1,0 +1,30 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+
+info:
+  component: Encrypt MSG Microservice
+
+server:
+  port: 7782
+
+spring:
+  config:
+    name: cc-apps-msg-encrypt-ms
+  application:
+    name: cc-apps-msg-encrypt-ms
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.ccappsmsgencryptms: DEBUG
