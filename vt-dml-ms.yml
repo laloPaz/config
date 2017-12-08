@@ -1,0 +1,38 @@
+variables:
+  eureka:
+    host: localhost
+    #host: service-registry-host
+    port: 8761
+
+info:
+  component: MicroServicio Delete de Tablas Viturales
+
+server:
+  port: 7767
+
+spring:
+  config:
+    name: vt-dml-ms
+  application:
+    name: vt-dml-ms
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.banamex.portal.microservice.vtdmlms: DEBUG
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${variables.eureka.host}:${variables.eureka.port}/eureka/
+    registerWithEureka: true
+  instance:
+    preferIpAddress: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000
